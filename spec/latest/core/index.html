@@ -1,15 +1,802 @@
-CTYPE html>
-<html>
-<body>
+<!DOCTYPE html>
+<html lang="en" dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+<head><meta lang="" property="dc:language" content="en">
+<title>DeepGraphs Core Vocabulary</title>
+<meta charset="utf-8">
+<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script async="" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=919620257c/cloudflare.min.js"></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"5ac29fcfc8daec4c97d50530ead090e8",petok:"b5c1e389b74c71737fe0a930205a442507584d05-1426240841-1800",zone:"DeepGraphs-cg.com",rocket:"0",apps:{"ga_key":{"ua":"UA-42071981-1","ga_bs":"1"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=919620257c/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
 
-<h1>DeepGraphs Specification</h1>
-
-<p>DeepGraphs Core.</p>
-
-<p>API Microformats.</p>
+<style type="text/css"></style>
 
 
-</body>
-</html>
+<style type="text/css">
+  .hlist {
+    border: 1px solid navy;
+    padding:5px;
+    background-color: #F4FFFF;
+  }
+  .hlist li {
+    display: inline;
+    display: inline-table;
+    list-style-type: none;
+    padding-right: 20px;
+  }
+  .highlight {
+    font-weight: bold;
+    color: #0a3;
+  }
+  .comment {
+    color: #999;
+  }
+  .illustration {
+    text-align: center;
+  }
+  #vocabulary-jsonld {
+    white-space: pre-wrap;
+  }
+</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-42071981-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+/* ]]> */
+</script>
+<style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><style>/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+cite .bibref {
+    font-style: normal;
+}
+
+code {
+    color:  #C83500;
+}
+
+/* --- TOC --- */
+.toc a, .tof a {
+    text-decoration:    none;
+}
+
+a .secno, a .figno {
+    color:  #000;
+}
+
+ul.tof, ol.tof {
+    list-style: none outside none;
+}
+
+.caption {
+    margin-top: 0.5em;
+    font-style:   italic;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+@media print {
+    .removeOnSave {
+        display: none;
+    }
+}
+</style><style>/* --- EXAMPLES --- */
+div.example-title {
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.example-title span {
+    text-transform: uppercase;   
+}
+aside.example, div.example, div.illegal-example {
+    padding: 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+div.illegal-example { color: red }
+div.illegal-example p { color: black }
+aside.example, div.example {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+    border-color: #e0cb52;
+    background: #fcfaee;    
+}
+
+aside.example div.example {
+    border-left-width: .1em;
+    border-color: #999;
+    background: #fff;
+}
+aside.example div.example div.example-title {
+    color: #999;
+}
+</style><style>/* --- ISSUES/NOTES --- */
+div.issue-title, div.note-title , div.warning-title {
+    padding-right:  1em;
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.issue-title { color: #e05252; }
+div.note-title { color: #2b2; }
+div.warning-title { color: #f22; }
+div.issue-title span, div.note-title span, div.warning-title span {
+    text-transform: uppercase;
+}
+div.note, div.issue, div.warning {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.note > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
+.issue, .note, .warning {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+}
+div.issue, div.note , div.warning {
+    padding: 1em 1.2em 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+span.note, span.issue, span.warning { padding: .1em .5em .15em; }
+
+.issue {
+    border-color: #e05252;
+    background: #fbe9e9;
+}
+.note {
+    border-color: #52e052;
+    background: #e9fbe9;
+}
+
+.warning {
+    border-color: #f11;
+    border-right-width: .2em;
+    border-top-width: .2em;
+    border-bottom-width: .2em;
+    border-style: solid;
+    background: #fbe9e9;
+}
+
+.warning-title:before{
+    content: "⚠"; /*U+26A0 WARNING SIGN*/
+    font-size: 3em;
+    float: left;
+    height: 100%;
+    padding-right: .3em;
+    vertical-align: top;
+    margin-top: -0.5em;
+}
+</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/w3c-unofficial"><!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]--></head>
+
+<body class="h-entry" role="document" id="respecDocument"><div id="StayFocusd-infobar" style="display:none;">
+    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
+    <span id="StayFocusd-infobar-msg"></span>
+    <span id="StayFocusd-infobar-links">
+        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a id="StayFocusd-infobar-hide">hide once</a>
+    </span>
+</div><div class="head" role="contentinfo" id="respecHeader">
+  <p>
+      
+        
+      
+  </p>
+  <h1 class="title p-name" id="title" property="dcterms:title">DeepGraphs Specification</h1>
+  
+    <h2 property="bibo:subtitle" id="subtitle">A Specification for Building Smarter Web APIs for the IoT</h2>
+  
+  <h2 id="unofficial-draft-13-march-2015">Unofficial Draft <time property="dcterms:issued" class="dt-published" datetime="2015-03-13">13 March 2015</time></h2>
+  <dl>
+    
+    
+      <dt>Latest editor's draft:</dt>
+      <dd><a href="http://www.deepgraphs.org/spec/latest/core/">http://www.deepgraphs.org/spec/latest/core/</a></dd>
+    
+    
+    
+    
+    
+    
+    
+    <dt>Editor:</dt>
+    <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Michael Petychakis"><a class="u-url url p-name fn" property="foaf:homepage" href="http://www.mpetyx.com/">Michael Petychakis</a>, National Technical University of Athens</span>
+<span property="rdf:rest" resource="rdf:nil"></span>
+</dd>
+
+    
+      <dt>Author:</dt>
+      <dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="Michael Petychakis"><a class="u-url url p-name fn" property="foaf:homepage" href="http://www.mpetyx.com/">Michael Petychakis</a>, National Technical University of Athens</span>
+</dd>
+
+    
+    
+  </dl>
+  
+  
+    <p>
+      
+        This document is also available in these non-normative formats:
+      
+      <a rel="alternate" href="core.jsonld">JSON-LD</a> and <a rel="alternate" href="core.ttl">Turtle</a>
+    </p>
+  
+  
+  
+    
+      <p class="copyright">Copyright © 2014-2015 the Contributors to the DeepGraphs Specification, published by the <a href="http://www.w3.org/community/DeepGraphs/">DeepGraphs W3C Community Group</a> under the <a href="http://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>. A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/">summary</a> is available.</p>
+    
+  
+  <hr>
+</div>
+<section id="abstract" class="introductory" property="dc:abstract"><h2 id="h-abstract" resource="#h-abstract"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
+  <p>DeepGraphs is a specification for building smarter web APIs for the Internet of Things.
+    By specifying a number of concepts commonly used in Web APIs it enables
+    the creation of generic API clients.</p>
+</section><section id="sotd" class="introductory"><h2 id="h-sotd" resource="#h-sotd"><span property="xhv:role" resource="xhv:heading">Status of This Document</span></h2>
+  
+    <p>
+      This document is merely a public working draft of a potential specification. It has
+      no official standing of any kind and does not represent the support or consensus of any
+      standards organisation.
+    </p>
+    
+  <div class="issue"><div class="issue-title" aria-level="3" role="heading" id="h-issue1"><span>Issue 1</span></div><p class="">This entire document is a work in progress and several
+    sections are incomplete, missing, or outdated. All open issues and decisions
+    are documented in our
+    <a href="https://github.com/DeepGraphs/Specifications/issues">issue tracker</a>.
+    If you have questions, please don't hesitate to
+    <a href="https://groups.google.com/forum/#!forum/deepgraphs">join the DeepGraphs Community Group and post to the mailing list.</a>
+  </p></div>
+
+  <p>This specification was published by the
+    <a href="http://www.w3.org/community/DeepGraphs/">DeepGraphs W3C Community Group</a>. It is
+    not a W3C Standard nor is it on the W3C Standards Track. Please note that under the
+    <a href="http://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>
+    there is a limited opt-out and other conditions apply. Learn more about
+    <a href="http://www.w3.org/community/">W3C Community and Business Groups</a>.</p>
+
+  <p>To participate in the development of this specification, please join the
+    <a href="http://www.w3.org/community/DeepGraphs/">DeepGraphs W3C Community Group</a>. If
+    you have questions, want to suggest a feature, or raise an issue, please send a mail to the
+    <a href="http://lists.w3.org/Archives/Public/public-DeepGraphs/">public-DeepGraphs@w3.org mailing list</a>.</p>
+
+  
+</section><section id="toc"><h2 class="introductory" id="h-toc" resource="#h-toc"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2><ul class="toc" role="directory" id="respecContents"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a href="#DeepGraphs-at-a-glance" class="tocxref"><span class="secno">3. </span>DeepGraphs at a Glance</a></li><li class="tocline"><a href="#using-DeepGraphs" class="tocxref"><span class="secno">4. </span>Using DeepGraphs</a><ul class="toc"><li class="tocline"><a href="#adding-affordances-to-representations" class="tocxref"><span class="secno">4.1 </span>Adding Affordances to Representations</a></li><li class="tocline"><a href="#documenting-a-web-api" class="tocxref"><span class="secno">4.2 </span>Documenting a Web API</a></li><li class="tocline"><a href="#discovering-a-DeepGraphs-powered-web-api" class="tocxref"><span class="secno">4.3 </span>Discovering a DeepGraphs-powered Web API</a></li></ul></li><li class="tocline"><a href="#advanced-concepts" class="tocxref"><span class="secno">5. </span>Advanced Concepts</a><ul class="toc"><li class="tocline"><a href="#collections" class="tocxref"><span class="secno">5.1 </span>Collections</a></li><li class="tocline"><a href="#templated-links" class="tocxref"><span class="secno">5.2 </span>Templated Links</a></li><li class="tocline"><a href="#description-of-http-status-codes-and-errors" class="tocxref"><span class="secno">5.3 </span>Description of HTTP Status Codes and Errors</a></li></ul></li><li class="tocline"><a href="#classes" class="tocxref"><span class="secno">6. </span>Classes</a></li><li class="tocline"><a href="#properties" class="tocxref"><span class="secno">7. </span>Properties</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">8. </span>Acknowledgements</a></li><li class="tocline"><a href="#the-DeepGraphs-core-vocabulary-in-json-ld" class="tocxref"><span class="secno">A. </span>The DeepGraphs Core Vocabulary in JSON-LD</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ul class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">B.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.2 </span>Informative references</a></li></ul></li></ul></section>
 
 
+
+<section class="informative" id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
+  <!--OddPage--><h2 id="h-introduction" resource="#h-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction</span></h2><p><em>This section is non-normative.</em></p>
+
+  <p>DeepGraphs is a simple format that gives a consistent and easy way to hyperlink between resources in your API and describe the possible workflows that the developer has predicted and allows for this. By specifying a number of concepts commonly used in Web APIs, as well as it enables the creation of generic API clients.</p>
+    
+<p>Adopting DeepGraphs will make your API explorable, and its documentation easily discoverable from within the API itself. It will also enable all the DeepGraph clients to interact with it, while developers would have to configure them in a high level.</p>
+
+<p>DeepGraphs is focusing on JSON-LD as it fits more natural to serialise the advanced rules that are going to be exchanged. Thus, all information could be encoded to RDF and treated accordingly..</p>
+</section>
+
+<section id="conformance" typeof="bibo:Chapter" resource="#conformance" property="bibo:hasPart">
+  <!--OddPage--><h2 id="h-conformance" resource="#h-conformance"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Conformance</span></h2>
+
+  <p>This specification describes the conformance criteria for
+    <dfn title="DeepGraphs API documentation" id="dfn-DeepGraphs-api-documentation">DeepGraphs API documentations</dfn>
+    and <dfn title="DeepGraphs client" id="dfn-DeepGraphs-client">DeepGraphs clients</dfn>. This criteria is
+    relevant to authors, authoring tool implementers, and client
+    implementers. All authoring guidelines, diagrams, examples, and notes
+    in this specification are non-normative, as are all sections
+    explicitly marked as non-normative. Everything else in this
+    specification is normative.</p>
+
+  <div class="issue"><div class="issue-title" aria-level="3" role="heading" id="h-issue2"><span>Issue 2</span></div><p class="">Conformance for DeepGraphs clients should probably not be
+    specified in this document.</p></div>
+
+  <div class="issue"><div class="issue-title" aria-level="3" role="heading" id="h-issue3"><span>Issue 3</span></div><p class="">Add normative statements</p></div>
+
+  <p>The key words <em class="rfc2119" title="MUST">MUST</em>, <em class="rfc2119" title="MUST NOT">MUST NOT</em>, <em class="rfc2119" title="REQUIRED">REQUIRED</em>, <em class="rfc2119" title="SHALL">SHALL</em>, <em class="rfc2119" title="SHALL NOT">SHALL NOT</em>, <em class="rfc2119" title="SHOULD">SHOULD</em>,
+    <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em>, <em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em>, <em class="rfc2119" title="NOT RECOMMENDED">NOT RECOMMENDED</em>, <em class="rfc2119" title="MAY">MAY</em>, and <em class="rfc2119" title="OPTIONAL">OPTIONAL</em> in this
+    specification have the meaning defined in [<cite><a class="bibref" href="#bib-RFC2119">RFC2119</a></cite>].</p>
+</section>
+
+<section class="informative" id="DeepGraphs-at-a-glance" typeof="bibo:Chapter" resource="#DeepGraphs-at-a-glance" property="bibo:hasPart">
+  <!--OddPage--><h2 id="h-DeepGraphs-at-a-glance" resource="#h-DeepGraphs-at-a-glance"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>DeepGraphs at a Glance</span></h2><p><em>This section is non-normative.</em></p>
+
+  <p>DeepGraphs aims to be a specification for the Internet of Things. Its main goal is to stand as an interoperability layer between server and client implementations. This will happen through a specification that takes into account most of the behaviour in today's web and automate this.</p>
+
+
+  <div class="issue"><div class="issue-title" aria-level="3" role="heading" id="h-issue6"><span>Issue 6</span></div><p class="">The used prefixes should be documented somewhere.</p></div>
+</section>
+
+<section id="using-DeepGraphs" typeof="bibo:Chapter" resource="#using-DeepGraphs" property="bibo:hasPart">
+  <!--OddPage--><h2 id="h-using-DeepGraphs" resource="#h-using-DeepGraphs"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Using DeepGraphs</span></h2>
+
+  <p>Throughout this section, a simple Web API featuring an issue tracker
+    will be used to illustrate how DeepGraphs can be used. The Web API enables
+    its users to file new issues, modify or delete existing ones, and
+    to comment them. For the sake of simplicity, orthogonal aspects such
+    as authentication or authorization are not covered.</p>
+
+  <section id="adding-affordances-to-representations" typeof="bibo:Chapter" resource="#adding-affordances-to-representations" property="bibo:hasPart">
+    <h3 id="h-adding-affordances-to-representations" resource="#h-adding-affordances-to-representations"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>Adding Affordances to Representations</span></h3>
+
+    <p>The exemplary Web API has to expose representations of issues and
+      comments. To enable interaction with those resources, a client has
+      to know which operations the server supports. In human-facing
+      websites such affordances are typically exposed by links and forms
+      and described in natural language. Unfortunately, machines can not
+      interpret such information easily. The solution that presents itself
+      is to reduce the language to a small number of unambiguous concepts
+      which are easily recognizable by a machine client. DeepGraphs formalizes
+      such concepts.</p>
+
+    <p>The simplest and most important affordance on the Web are
+      hyperlinks. Without them, it would be impossible to browse the Web.
+      Users typically select the link based on the text it is labeled
+      with. To give machines a similar understanding, links can be
+      annotated with a link relation type—a registered token or a
+      URI identifying the semantics of the link. The following example
+      shows how such a typed link is used in HTML to reference a
+      stylesheet.</p>
+
+    <div class="example"><div class="example-title"><span>Example 1</span>: A typed link referencing a stylesheet as used in HTML</div><pre class="example">&lt;link <span class="highlight">rel="stylesheet"</span> href="http://www.example.com/styles.css" /&gt;</pre></div>
+
+    <p>In Linked Data, the link relation type corresponds to the property
+      itself. An example in JSON-LD would thus look as follows.</p>
+
+    <div class="example"><div class="example-title"><span>Example 2</span>: Referencing a stylesheet in JSON-LD</div><pre class="example">{
+  <span class="highlight">"urn:iana:link-relations:stylesheet"</span>: { "@id": "http://www.example.com/styles.css" }
+}</pre></div>
+
+<!--     <p class="note">The <code>urn:iana:link-relations:stylesheet</code> URN
+      is not officially registered (yet). For the moment, see
+      <a href="http://tools.ietf.org/html/draft-saintandre-iana-urn">draft-saintandre-iana-urn</a>
+      which defines this URN pattern.</p> -->
+
+    <p>Generally, a client decides whether to follow a link or not based on
+      the link relation (or the property in general, in the case of
+      Linked Data) which defines its semantics. There are however also
+      clients such as Web crawlers which simply follow every which is
+      intended to be dereferenced. In HTML this usually means that all
+      links in anchor elements (the <code>&lt;a&gt;</code> tag) are
+      followed but, e.g., most references in link elements (the
+      <code>&lt;link&gt;</code> tag), such as used in the example above,
+      are ignored. Since in RDF serializations no such distinction exists,
+      the best a client can do is to blindly try to dereference all URIs.
+      It would thus be beneficial to describe in a machine-readable manner
+      whether a property represents a link that is intended to be
+      dereferenced or whether it solely represents an identifier. DeepGraphs's
+      <i>Link</i> class does just that. It can be used to define properties
+      that represent dereferenceable links. In the exemplary Web API used
+      throughout this section, it can, e.g., be used to define a property
+      linking issues to their comments:</p>
+
+    <div class="example"><div class="example-title"><span>Example 3</span>: Definining properties representing hyperlinks using DeepGraphs's Link class</div><pre class="example">{
+  "@context": "http://www.w3.org/ns/DeepGraphs/context.jsonld",
+  "@id": "http://api.example.com/vocab#comments",
+  <span class="highlight">"@type": "Link"</span>
+}</pre></div>
+
+    <p>In the example above, a property identified with the URL
+      <code>http://api.example.com/vocab#comments</code> is defined to be
+      of the type <i>Link</i>. This is enough information for a client
+      understanding DeepGraphs to know that the value of the
+      <code>comments</code> property in the following example is intended
+      to be dereferenced.</p>
+
+    <div class="example"><div class="example-title"><span>Example 4</span>: Using a property defined to be a hyperlink</div><pre class="example">{
+  "@context": {
+    <span class="highlight">"comments": "http://api.example.com/vocab#comments"</span>
+  },
+  "@id": "http://api.example.com/an-issue",
+  "title": "An exemplary issue linking to its comments",
+  <span class="highlight">"comments": { "@id": "http://api.example.com/an-issue/comments" }</span>
+}</pre></div>
+
+    <p>In the example above, the value of the <code>comments</code>
+      property is a JSON object with an <code>@id</code> member. This is
+      JSON-LD's convention to distinguish between strings and IRIs. By
+      using JSON-LD's type-coercion feature, the representation can be
+      made even more idiomatic:</p>
+
+    <div class="example"><div class="example-title"><span>Example 5</span>: Using JSON-LD's type-coercion feature to create idiomatic representations</div><pre class="example">{
+  "@context": {
+    "comments": { "@id": "http://api.example.com/vocab#comments", <span class="highlight">"@type": "@id"</span> }
+  },
+  "@id": "http://api.example.com/an-issue",
+  "title": "An exemplary issue linking to its comments",
+  "comments": <span class="highlight">"http://api.example.com/an-issue/comments"</span>
+}</pre></div>
+
+    <p>While links are enough to build read-only Web APIs, more powerful
+      affordances are required to build read-write Web APIs. Thus, DeepGraphs
+      introduces the notion of operations. Simply speaking, an
+      <i>Operation</i> represents the information necessary for a client
+      to construct valid HTTP requests in order to manipulate the server's
+      resource state. As such, the only required property of an
+      <i>Operation</i> is its HTTP <i>method</i>. Optionally, it is
+      also possible to describe what information the server <i>expects</i>
+      or <i>returns</i>, including additional information about HTTP
+      status codes that might be returned. This helps a developer to
+      understand what to expect when invoking an operation. This
+      information has, however, not to be considered as being complete;
+      it is merely a hint. Developers should, e.g., expect that other
+      HTTP status codes might be returned and program their clients
+      accordingly.</p>
+
+    <p>DeepGraphs has three predefined operation classes, namely
+      <i>CreateResourceOperation</i>, <i>ReplaceResourceOperation</i>,
+      and <i>DeleteResourceOperation</i>. As their names suggest, they
+      can be used to implement simple
+      <abbr title="Create, replace, update, and delete">CRUD</abbr>
+      functionality. More specialized operations can be easily created
+      by subclassing these classes or their base class <i>Operation</i>.</p>
+
+    <p>The following example illustrates how representations can be
+      augmented with information that enables clients to interact with
+      them. A client would be able to understand that the resource in
+      the example below can be deleted by sending an HTTP DELETE
+      request.</p>
+
+    <div class="example"><div class="example-title"><span>Example 6</span>: A representation of an issue augmented with a delete operation</div><pre class="example">{
+  <span class="highlight">"@context": "http://www.w3.org/ns/DeepGraphs/context.jsonld"</span>,
+  "@id": "/an-issue",
+  "title": "An exemplary issue representation",
+  "description": "This issue can be deleted with an HTTP DELETE request",
+  <span class="highlight">"operation"</span>: [
+    <span class="highlight">{
+      "@type": "DeleteResourceOperation",
+      "method": "DELETE"
+    }</span>
+  ]
+}</pre></div>
+
+    <p>The example above references DeepGraphs's context to map properties such
+      as <code>operation</code> and <code>method</code> and values like
+      <code>DeleteResourceOperation</code> to URLs that unambiguously
+      identify these concepts. It would be similarly valid JSON-LD if
+      these mappings would be directly embedded into the representation
+      or if the full URLs would be used instead. Typically, however, the
+      context is the same for a lot of representations in a Web API and
+      it thus makes sense to reduce the response size by leveraging a
+      remote context that can easily be cached by a client.</p>
+  </section>
+
+  <section id="documenting-a-web-api" typeof="bibo:Chapter" resource="#documenting-a-web-api" property="bibo:hasPart">
+    <h3 id="h-documenting-a-web-api" resource="#h-documenting-a-web-api"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>Documenting a Web API</span></h3>
+
+    <p>In Web APIs, most representations are typically very similar.
+      Furthermore, resources often support the same operations. It thus
+      makes sense, to collect this information in a central documentation.
+      Traditionally, this has been done in natural language which forces
+      developers to hardcode that knowledge into their clients. DeepGraphs
+      addresses this issue by making the documentation completely
+      machine-processable. The fact that all definitions can be identified
+      by URLs enables reuse at unprecedented granularity.</p>
+
+    <p>DeepGraphs's <i>ApiDocumentation</i> class builds the foundation for
+      the description of a Web API. As shown in the following example,
+      DeepGraphs describes a API by giving it a title, a short description, and
+      documenting its main entry point. Furthermore, the classes known to
+      be supported by the Web API and additional information about status
+      codes that might be returned can be documented. This information
+      may be used to automatically generate documentations in natural
+      language.</p>
+
+    <div class="example"><div class="example-title"><span>Example 7</span>: The overall structure of a DeepGraphs API documentation</div><pre class="example">{
+  "@context": "http://www.w3.org/ns/DeepGraphs/context.jsonld",
+  "@id": "http://api.example.com/doc/",
+  <span class="highlight">"@type": "ApiDocumentation"</span>,
+  <span class="highlight">"title"</span>: <span class="comment">"The name of the API"</span>,
+  <span class="highlight">"description"</span>: <span class="comment">"A short description of the API"</span>,
+  <span class="highlight">"entrypoint"</span>: <span class="comment">"URL of the API's main entry point"</span>,
+  <span class="highlight">"supportedClass"</span>: [
+    <span class="comment">... Classes known to be supported by the Web API ...</span>
+  ],
+  <span class="highlight">"possibleStatus"</span>: [
+    <span class="comment">... Statuses that should be expected and handled properly ... </span>
+  ]
+}</pre></div>
+
+    <p>In Linked Data, properties are, just as everything else, identified
+      by IRIs and thus have global scope which implies that they have
+      independent semantics. In contrast, properties in data models as
+      used in common programming languages are class-dependent. Their
+      semantics depend on the class they belong to. In data models classes
+      are typically described by the properties they expose whereas in
+      Linked Data properties define to which classes they belong. If no
+      class is specified, it is assumed that a property may apply to every
+      class.</p>
+
+    <p>These differences have interesting consequences. For example, the
+      commonly asked question of which properties can be applied to an
+      instance of a specific class can typically not be answered for
+      Linked Data. Strictly speaking, any property which is not explicitly
+      forbidden could be applied. This stems from the fact that Linked Data
+      works under an open-world assumption whereas data models used by
+      programmers typically work under a closed-world assumption. The
+      difference is that when a closed world is assumed, everything that
+      is not known to be true is false or vice-versa. With an open-world
+      assumption the failure to derive a fact does not automatically imply
+      the opposite; it embraces the fact that the knowledge is
+      incomplete.</p>
+
+    <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue7"><span>Issue 7</span></div><p class="">Mention that DeepGraphs classes are dereferenceable
+      resources.</p></div>
+
+    <p>Since DeepGraphs uses classes to describe the information expected or
+      returned by an operation, it also defines a concept to describe the
+      properties known to be supported by a class. The following example
+      illustrates this feature. Instead of referencing properties directly,
+      <i>supportedProperty</i> references an intermediate data structure,
+      namely instances of the <i>SupportedProperty</i> class. This makes
+      it possible to define whether a specific property is required or
+      whether it is read-only or write-only depending on the class it is
+      associated with.</p>
+
+    <div class="example"><div class="example-title"><span>Example 8</span>: Defining a class and documenting its supported properties</div><pre class="example">{
+  "@context": "http://www.w3.org/ns/DeepGraphs/context.jsonld",
+  "@id": "http://api.example.com/doc/#Comment",
+  <span class="highlight">"@type": "Class"</span>,
+  <span class="highlight">"title"</span>: <span class="comment">"The name of the class"</span>,
+  <span class="highlight">"description"</span>: <span class="comment">"A short description of the class."</span>,
+  <span class="highlight">"supportedProperty"</span>: [
+    <span class="comment">... Properties known to be supported by the class ...</span>
+    {
+      <span class="highlight">"@type": "SupportedProperty"</span>,
+      <span class="highlight">"property"</span>: "#property", <span class="comment">// The property</span>
+      <span class="highlight">"required"</span>: true, <span class="comment">// Is the property required in a request to be valid?</span>
+      <span class="highlight">"readable"</span>: false, <span class="comment">// Can the client retrieve the property's value?</span>
+      <span class="highlight">"writeable"</span>: true <span class="comment">// Can the client change the property's value?</span>
+    }
+  ]
+}</pre></div>
+
+    <p>All instances of a specific class typically support the same
+      operations. DeepGraphs therefore features a <i>supportedOperation</i>
+      property which defines the operations supported by all instances of
+      a class.</p>
+
+    <div class="example"><div class="example-title"><span>Example 9</span>: Defining a class and documenting its supported operations</div><pre class="example">{
+  "@context": "http://www.w3.org/ns/DeepGraphs/context.jsonld",
+  "@id": "http://api.example.com/doc/#Comment",
+  "@type": "Class",
+  "title": <span class="comment">"The name of the class"</span>,
+  "description": <span class="comment">"A short description of the class."</span>,
+  "supportedProperty": [
+    <span class="comment">... Properties known to be supported by the class ...</span>
+  ],
+  <span class="highlight">"supportedOperation"</span>: [
+    <span class="comment">... Operations known to be supported by instances of the class ...</span>
+  ]
+}</pre></div>
+
+    <p>The same feature can be used to describe the operations supported
+      by values of a <i>Link</i> property. This is often helpful when
+      certain operations depend on the permissions of the current user. It
+      makes it, e.g., possible to show a "delete" link only if the current
+      user has the permission to delete the resource. Otherwise, the link
+      would simply be hidden in the representation.</p>
+
+    <div class="example"><div class="example-title"><span>Example 10</span>: Documenting the supported operations of link properties</div><pre class="example">{
+  "@context": "http://www.w3.org/ns/DeepGraphs/context.jsonld",
+  "@id": "http://api.example.com/doc/#comments",
+  <span class="highlight">"@type": "Link"</span>,
+  "title": "Comments",
+  "description": "A link to comments with an operation to create a new comment.",
+  <span class="highlight">"supportedOperation"</span>: [
+    <span class="highlight">{
+      "@type": "CreateResourceOperation",
+      "title": "Creates a new comment",
+      "method": "POST",
+      "expects": "http://api.example.com/doc/#Comment",
+      "returns": "http://api.example.com/doc/#Comment",
+      "possibleStatus": [</span>
+        <span class="comment">... Statuses that should be expected and handled properly ...</span>
+      <span class="highlight">]
+    }</span>
+  ]
+}</pre></div>
+
+    <p>Keep in mind that operations specified in an <i>ApiDocumentation</i>
+      may fail at runtime as either resources or the <i>ApiDocumentation</i>
+      itself have changed since they have been retrieved. A simple strategy
+      to try to recover from such an error is to reload the
+      <i>ApiDocumentation</i>.</p>
+
+    <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue8"><span>Issue 8</span></div><p class="">Describe the various properties of an operation.</p></div>
+  </section>
+
+  <section id="discovering-a-DeepGraphs-powered-web-api" typeof="bibo:Chapter" resource="#discovering-a-DeepGraphs-powered-web-api" property="bibo:hasPart">
+    <h3 id="h-discovering-a-DeepGraphs-powered-web-api" resource="#h-discovering-a-DeepGraphs-powered-web-api"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3 </span>Discovering a DeepGraphs-powered Web API</span></h3>
+
+    <p>The first step when trying to access a Web API is to find an entry
+      point. Typically, this is done by looking for documentation on the
+      API publisher's homepage. DeepGraphs enables the API's main entry point
+      to be discovered automatically if the API publisher marks his
+      responses with a special HTTP Link Header as defined in [<cite><a class="bibref" href="#bib-RFC5988">RFC5988</a></cite>].
+      A DeepGraphs client would look for a Link Header with a relation type
+      <code>http://www.w3.org/ns/DeepGraphs/core#apiDocumentation</code> (this is
+      the IRI identifying the <i>DeepGraphs:apiDocumentation</i> property).</p>
+
+    <p>In the following example, a DeepGraphs client simply accesses the
+      homepage of an API publisher (<code>http://www.example.com</code>)
+      to find the entry point of its API. A client may use an HTTP GET or
+      HEAD request. The difference between the two is that the former may
+      return a message-body in the response whereas the latter will not;
+      otherwise they are identical.</p>
+
+    <div class="example"><div class="example-title"><span>Example 11</span>: Discovering DeepGraphs API documentation documents</div><pre class="example">HEAD / HTTP/1.1
+Host: www.example.com
+
+====================================
+
+HTTP/1.1 200 OK
+...
+Content-Type: text/html; charset=utf-8
+<span class="highlight">Link: &lt;http://api.example.com/doc/&gt;; rel="http://www.w3.org/ns/DeepGraphs/core#apiDocumentation"</span></pre></div>
+
+    <p>The response in the example above contains an HTTP Link Header
+      pointing to <code>http://api.example.com/doc/</code>.
+      Retrieving that resource, the client would obtain a
+      <a href="#dfn-DeepGraphs-api-documentation" class="internalDFN">DeepGraphs API documentation</a> defining the API's main entry
+      point:</p>
+
+    <div class="example"><div class="example-title"><span>Example 12</span>: Retrieving a DeepGraphs API documentation to obtain the main entry point</div><pre class="example">GET /doc/ HTTP/1.1
+Host: api.example.com
+Accept: application/ld+json
+
+====================================
+
+HTTP/1.1 200 OK
+...
+Content-Type: application/ld+json
+
+{
+  "@context": "http://www.w3.org/ns/DeepGraphs/context.jsonld",
+  "@id": "http://api.example.com/doc/",
+  "title": "The example.com API",
+  <span class="highlight">"entrypoint": "http://api.example.com/"</span>,
+  ...
+}</pre></div>
+
+    <p>Please note that in most cases the entry point will already be
+      known to the client. Thus, the discovery of the API documentation
+      using HTTP Link Headers is typically not necessary as the concepts
+      used in responses from the API will dereference to their
+      documentation.</p>
+  </section>
+</section>
+
+<section>
+  <h2>Using DeepGraphs Descriptions as JSON</h2>
+
+  <p class="issue">The are multiple ways to serialize a
+    <a>DeepGraphs API documentation</a> in JSON-LD. To make it usable also for
+    plain-old JSON clients, the serialization has to have a deterministic
+    shape. The definition of a profile will make it possible to signal
+    or request specific serialization conventions at the media type
+    level. The definition of the profile might be as simple as defining
+    a JSON-LD frame.</p>
+</section>
+
+
+
+<section class="informative" id="acknowledgements" typeof="bibo:Chapter" resource="#acknowledgements" property="bibo:hasPart">
+  <!--OddPage--><h2 id="h-acknowledgements" resource="#h-acknowledgements"><span property="xhv:role" resource="xhv:heading"><span class="secno">8. </span>Acknowledgements</span></h2><p><em>This section is non-normative.</em></p>
+
+  <p>The authors would like to thank the following individuals for contributing
+    their ideas and providing feedback for writing this specification:
+    Arnau Siches, Mark Baker, Martijn Faassen, Matthias Lehmann, Ruben Verborgh,
+    Ryan J. McDonough, Sam Goto, Thomas Hoppe, @wasabiwimp (on GitHub).</p>
+</section>
+
+
+
+<section id="references" class="appendix" typeof="bibo:Chapter" resource="#references" property="bibo:hasPart"><!--OddPage--><h2 id="h-references" resource="#h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>References</span></h2><section id="normative-references" typeof="bibo:Chapter" resource="#normative-references" property="bibo:hasPart"><h3 id="h-normative-references" resource="#h-normative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B.1 </span>Normative references</span></h3><dl class="bibliography" resource=""><dt id="bib-RFC2119">[RFC2119]</dt><dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119" property="dc:requires"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119" property="dc:requires">https://tools.ietf.org/html/rfc2119</a>
+</dd><dt id="bib-RFC6570">[RFC6570]</dt><dd>J. Gregorio; R. Fielding; M. Hadley; M. Nottingham; D. Orchard. <a href="https://tools.ietf.org/html/rfc6570" property="dc:requires"><cite>URI Template</cite></a>. March 2012. Proposed Standard. URL: <a href="https://tools.ietf.org/html/rfc6570" property="dc:requires">https://tools.ietf.org/html/rfc6570</a>
+</dd></dl></section><section id="informative-references" typeof="bibo:Chapter" resource="#informative-references" property="bibo:hasPart"><h3 id="h-informative-references" resource="#h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B.2 </span>Informative references</span></h3><dl class="bibliography" resource=""><dt id="bib-BCP47">[BCP47]</dt><dd>A. Phillips; M. Davis. <a href="http://tools.ietf.org/html/bcp47" property="dc:references"><cite>Tags for Identifying Languages</cite></a>. September 2009. IETF Best Current Practice. URL: <a href="http://tools.ietf.org/html/bcp47" property="dc:references">http://tools.ietf.org/html/bcp47</a>
+</dd><dt id="bib-RFC5988">[RFC5988]</dt><dd>M. Nottingham. <a href="https://tools.ietf.org/html/rfc5988" property="dc:references"><cite>Web Linking</cite></a>. October 2010. Proposed Standard. URL: <a href="https://tools.ietf.org/html/rfc5988" property="dc:references">https://tools.ietf.org/html/rfc5988</a>
+</dd><dt id="bib-Turtle">[Turtle]</dt><dd>Eric Prud'hommeaux; Gavin Carothers. <a href="http://www.w3.org/TR/turtle/" property="dc:references"><cite>RDF 1.1 Turtle</cite></a>. 25 February 2014. W3C Recommendation. URL: <a href="http://www.w3.org/TR/turtle/" property="dc:references">http://www.w3.org/TR/turtle/</a>
+</dd></dl></section></section></body></html>
